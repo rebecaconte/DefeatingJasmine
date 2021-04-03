@@ -1,0 +1,14 @@
+#myCanvas {
+    width: 700px;
+    height: 500px;
+    background-image: url('./images/background2.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/*
+#bug1 {
+    width: 100px;
+    height: 70px;
+}*/
