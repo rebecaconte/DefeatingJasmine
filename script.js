@@ -1,89 +1,86 @@
+
+// BASE CANVAS
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 canvas.style.border = '2px solid black';
+
+let bg = new Image();
+bg.src = "./images/bluebg.jpg";
+
+// PLAYER
+let ironhacker = new Image();
+ironhacker.src = './images/ironhacker.png';
+let ironhackerX = 0;
+
+
+// MENU
+let startButton = new Image();
+startButton.src = "./images/start.png";
+
+
+// GAME OVER
 let isGameOver = false;
+// let gameStarted = false;
 
-// load all images
-let check = new Image();
-check.src = './images/check.png';
+// MUSIC
+/*function playAudio() {
+    
+audio.play();
+} */
 
-let xError = new Image();
-xError.src = './images/error.png';
-
-let bug1 = new Image();
-bug1.src = './images/bug1.png';
-
-let bug2 = new Image();
-bug2.src = './images/bug2.png';
-
-let bug3 = new Image();
-bug3.src = './images/bug3.png';
-
-let bug4 = new Image();
-bug4.src = './images/bug4.png';
-
-
-
-//START GAME
-
-
-
-//BTN - START & RESTART
+// HANDLES THE FALLING ITEMS ARRAY 
+const fallingObjects = new FallingObjects();
+fallingObjects.setup();
 
 
 // MAIN
+function draw() { 
 
-// DRAG and DROP 
+   ctx.drawImage(bg, 0, 0, 800, 600);
 
+   fallingObjects.update();
+   // console.log(fallingObjects.randomObjects);
 
-function draw(){
-    ctx.drawImage(check, 0, 70, 20, 10);
+   for(let i = 0; i <= fallingObjects.randomObjects.length - 1; i++) {
+        ctx.drawImage(fallingObjects.randomObjects[i], 
+            fallingObjects.randomObjects[i].imageX, 
+            fallingObjects.randomObjects[i].imageY, 
+            fallingObjects.randomObjects[i].width, 
+            fallingObjects.randomObjects[i].height);
+   }
+   
+   ctx.drawImage(ironhacker, canvas.width / 2 + ironhackerX, canvas.height - 80, 50, 70)
 
 }
 
-let drag = false;
-let dragStart;
-let dragEnd;
-draw();
+    // PLAYER MOVEMENT
 
-canvas.addEventListener('mousedown', function(event) {
-    dragStart = {
-      x: event.pageX - canvas.offsetLeft,
-      y: event.pageY - canvas.offsetTop
+window.addEventListener('keydown', (e) => {
+    const code = e.key;
+
+    if (code == "ArrowLeft") {
+       ironhackerX -= 20;
+    } else if(code == "ArrowRight") {
+       ironhackerX += 20;
     }
-    drag = true;
-  })
-
-
-canvas.addEventListener('mousemove', function(event) {
-    if (drag) {
-      dragEnd = {
-        x: event.checkX - canvas.offsetLeft,
-        y: event.checkY - canvas.offsetTop
-      }
-      context.translate(dragEnd.x - dragStart.x, dragEnd.y - dragStart.y);
-      
-      clear()
-      draw()
-    }
-
-  })
-
-
-//STOP GAME 
-
-
-
-
-
-
-
-//ctx.drawImage(bg, 0, 0);
+});
 
 window.addEventListener('load', () => {
+    
     //audio.play()
     //audio.pause()
+
     if(!isGameOver) {
-        draw() 
+
+        // draw();
+        intervalId = setInterval(() => {
+            requestAnimationFrame(draw);
+        }, 200); 
     }
 })
+
+
+
+/*if (isGameOver) {
+      cancelAnimationFrame(intervalId)
+      ctx.fillText("Game Over", 20, canvas.height -70);*/

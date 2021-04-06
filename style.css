@@ -1,14 +1,6 @@
-#myCanvas {
-    width: 700px;
-    height: 500px;
-    background-image: url('./images/background2.png');
+#bgMenu {
+    background-image: url('./images/bluebg.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-size:cover;
+    background-position:center;
 }
-
-
-/*
-#bug1 {
-    width: 100px;
-    height: 70px;
-}*/
