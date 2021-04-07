@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <link href="style.css" rel="stylesheet">
@@ -6,21 +6,55 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Defeating Jasmine</title>
     </head>
-    <body id="bgMenu">
-        <div id="header">
-            <h1> Defeating Jasmine!</h1>
-        </div>
+    <body>
+        <div class="bg-container">
+            <!-- START MENU -->
+            <div id="canvas-menu">
+                <h1 class="header-start">Defeating Jasmine!</h1>
 
-        <!-- START MENU -->
+                    <p class="text"> Every Ironhacker knows Jasmine can be ~moody~ sometimes. <br>
+                        She loves throwing errors!
+                        Here is your chance to defeat Jasmine! <br>
+                        Try to grab as much green check marks as you can and avoid<br> Jasmine's red errors and all the bugs along the way. <br>
+                        They are all falling from the top! </p>
 
-        <div id="splash">
-            <p class= "text"> Every Ironhacker knows Jasmine can be ~moody~ sometimes. <br>
-                She loves throwing errors!<br>
-                Here is your chance to defeat Jasmine! <br>
-                Try to grab as much green check marks as you can and avoid Jasmine's red errors and all the bugs along the way. <br>
-                They are all falling from the top! </p>
+                <a id="start-button"><img src="./images/start.png" alt="startButton" class="buttons"></a>
+            </div>
 
-            <a href="/defeatingjasmine/game.html"><img src="./images/start.png" alt="startButton" class="buttons"></a>
+            <!-- GAME -->
+            <canvas id="myCanvas" width="800px" height="600px"></canvas>
+            <!--<canvas id="scoreBG">img src="./images/scoreBG.png" alt="scoreBG"</canvas>--> 
+
+            <!-- GAME OVER MENU -->
+            <div id="canvas-gameover">
+                <h1 class="header-gameover"> Defeating Jasmine!</h1>
+
+                <p class="text"> Hey, Ironhacker's never give up! <br>
+                Try again!</p>
+                <img src="./images/gameOver.png" alt="gameOverSign" class="game-over">
+
+                <a id ="restart">
+                <img src="./images/restart.png" alt="restartButton" class="buttons">
+                </a>
+            </div>
+
+            <!-- WIN GAME -->
+            <div id="canvas-win-game">
+                <h1 class="header"> Defeating Jasmine!</h1>
+
+                <p class="text"> Hey, Ironhacker, you won! <br>
+                Want to play again?</p>
+                <!--  <img src="./images/gameOver.png" alt="gameOverSign" class="gameOver"> -->
+
+                <a id ="restart">
+                <img src="./images/restart.png" alt="restartButton" class="buttons">
+                </a>
+            </div>
+
+
+            <script src="./classes/fallingObjects.js"></script>
+            <script src="./classes/player.js"></script>
+            <script src="./script.js"></script>
         </div>
     </body>
 </html>

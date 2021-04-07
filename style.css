@@ -1,6 +1,74 @@
-#bgMenu {
+body {
+    font-size: 14px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    text-align: justify;
+    text-justify: center;
+    margin: 0;
+}
+
+.bg-container {
     background-image: url('./images/bluebg.jpg');
     background-repeat: no-repeat;
-    background-size:cover;
-    background-position:center;
+    background-size: 60% 95%, contain;
+    /*position:relative;
+    width: 100%;*/
+    /*
+    background-attachment: fixed;
+    background-size: 60% 100%, contain;
+    margin: 0;*/
+}
+
+.header-start {
+    margin-top: 0;
+    font-size: 30px;
+    margin-left:220px;
+    padding-top: 140px;
+}
+
+.header-gameover {
+    margin-top: 0;
+    font-size: 30px;
+    margin-left:220px;
+    padding-top: 80px;
+}
+
+.text {
+    font-size: 15px;
+    margin-left:160px;
+    text-align:left;
+    padding-top: 50px;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.buttons{
+    cursor: pointer;
+    position: fixed;
+    float: right;
+    bottom: 180px;
+    right: 600px;
+    width: 150px; 
+    height: 75px;
+}
+
+.game-over {
+    width: 10%;
+    display:flex;
+    align-items: center;
+}
+
+/* HIDDEN FEATURE */
+
+.hidden {
+  display:none;
+}
+
+
+
+#score {
+
 }
