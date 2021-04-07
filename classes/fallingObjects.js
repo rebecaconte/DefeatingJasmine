@@ -2,7 +2,8 @@
 class FallingObjects { 
     constructor() {
         this.maxItems = 15;
-        this.maxSteps = 4;
+        this.maxSteps = 15;
+        this.minSteps = 5;
 
         this.bug1 = new Image();
         this.bug1.src = './images/bug1.png';
@@ -57,7 +58,7 @@ class FallingObjects {
                 this.randomObjects[i].imageY = 0;
                 this.randomObjects[i].imageX = Math.floor(Math.random() * (canvas.width - this.randomObjects[i].width));
             } else {
-                this.randomObjects[i].imageY += this.maxSteps;
+                this.randomObjects[i].imageY += this.randomObjects[i].speed;
             }
         }
     }
@@ -78,9 +79,16 @@ class FallingObjects {
     // GENERATE ITEMS BY INDEX
     generateNewFallingItem() {
         const index = this.randomIndex(this.objects); 
-        let randomImage = this.objects[index];
-        randomImage.imageX = Math.floor(Math.random() * (canvas.width - randomImage.width));
-        this.randomObjects.push(randomImage);
+        const randomImage = this.objects[index];
+        // Manual cloning of a random image 
+        let newRandomImage = new Image();
+        newRandomImage.src = randomImage.src;
+        newRandomImage.width = randomImage.width;
+        newRandomImage.height = randomImage.height;
+        newRandomImage.imageX = Math.floor(Math.random() * (canvas.width - randomImage.width));
+        newRandomImage.imageY = 0;
+        newRandomImage.speed = Math.floor(Math.random() * (this.maxSteps - this.minSteps)) + this.minSteps;
+        this.randomObjects.push(newRandomImage);
     }
 }
 
