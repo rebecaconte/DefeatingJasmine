@@ -1,4 +1,4 @@
-// ALL IMAGES
+// ---- ALL FALLING IMAGES -----
 class FallingObjects {
     constructor() {
         this.maxItems = 10;
@@ -58,7 +58,7 @@ class FallingObjects {
         this.randomObjects = [];
     }
 
-    // CLEARING & RESET SCREEN
+    // CLEAR & RESET SCREEN
     update () {
         for(let i = 0; i < this.randomObjects.length; i++) {
             if(this.randomObjects[i].imageY >= canvas.height) {
@@ -83,7 +83,7 @@ class FallingObjects {
     // GENERATING NEW ITEMS
     setup () {
         for(let i = 0; i < this.maxItems; i++) {
-            this.generateNewFallingItem();
+            this.generateNewFallingItem()
         }
     }
 
@@ -100,6 +100,7 @@ class FallingObjects {
         newRandomImage.imageY = 0;
         newRandomImage.speed = Math.floor(Math.random() * (this.maxSteps - this.minSteps)) + this.minSteps;
         newRandomImage.type = randomImage.type;
-        this.randomObjects.push(newRandomImage);
+
+        this.randomObjects.push(newRandomImage)
     }
 }

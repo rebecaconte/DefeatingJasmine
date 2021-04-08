@@ -9,14 +9,14 @@
 
 Every IronHacker knows that Jasmine can be [pause] ~moody~ sometimes. She LOVES throwing errors! 
 
-In this game you can Defeat Jasmine just by bringing some green check signs to the right side of the board. 
+In this game you can Defeat Jasmine just by grabbing some green check signs and taking breaks to increase your time. 
 
 But be aware! Jasmine is not going to let you win this battle so easily. She will throw you some erros ❌ along the way, there will be bugs 🐝 🦟 🐛 and a lot of breaks 🕑 to take on your path.
 
 
 ## MVP (DOM - CANVAS)
 
-- game has errors and bugs falling off the top of the canvas 
+- game has 'errors' and bugs falling off the top of the canvas 
 - check sign of the left needs to be dragged from the left and dropped at the right side of the screen
 - grabbing bugs along the way increase strenght
 - when touch red X 3 times, end the game OR decrease strenght

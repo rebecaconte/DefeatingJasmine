@@ -4,71 +4,70 @@ body {
     font-style: normal;
     text-align: justify;
     text-justify: center;
+    text-shadow: white 0px 0px 2px;
     margin: 0;
 }
 
 .bg-container {
+
     background-image: url('./images/bluebg.jpg');
     background-repeat: no-repeat;
-    background-size: 60% 95%, contain;
-    /*position:relative;
-    width: 100%;*/
-    /*
-    background-attachment: fixed;
-    background-size: 60% 100%, contain;
-    margin: 0;*/
+    background-size: 100% 100%;
+    width: 800px;
+    height: 600px;
+   
 }
 
 .header-start {
     margin-top: 0;
     font-size: 30px;
-    margin-left:220px;
-    padding-top: 140px;
+    margin-left:200px;
+    padding-top: 30px;
 }
 
 .header-gameover {
     margin-top: 0;
     font-size: 30px;
-    margin-left:220px;
-    padding-top: 80px;
+    margin-left:px;
+    padding-top: 20px;
+    padding-left: 30%;
 }
 
 .text {
-    font-size: 15px;
-    margin-left:160px;
-    text-align:left;
-    padding-top: 50px;
-}
+    font-size: 20px;
+    margin-left:80px;
+    text-align: left;
+    padding-top: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}  
 
-.box {
-    display: flex;
-    flex-wrap: wrap;
-  }
+
+/* start and restart */
 
 .buttons{
     cursor: pointer;
-    position: fixed;
+    display: flex;
+    align-items: center;
     float: right;
-    bottom: 180px;
-    right: 600px;
+    padding-right: 15%;
     width: 150px; 
     height: 75px;
 }
 
 .game-over {
-    width: 10%;
+    width: 40%;
     display:flex;
     align-items: center;
+    float:initial;
+    padding-left: 30%;
+    padding-top: 5%;
+    
+
 }
 
 /* HIDDEN FEATURE */
 
 .hidden {
   display:none;
-}
-
-
-
-#score {
-
 }
