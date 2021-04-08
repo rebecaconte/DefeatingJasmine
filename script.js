@@ -39,7 +39,7 @@ muteButton.src = "./images/muteMusic2.png"
 let unmuteButton = new Image();
 unmuteButton.src = "./images/musicButton2.png"
 
-const gameAudio = new Audio("sounds/example.mp3");
+const gameAudio = new Audio("sounds/audioGame.mp3");
 
 // music buttons position and size
 let musicOn = true;
