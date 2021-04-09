@@ -7,11 +7,11 @@
 
 ## Description
 
-Every IronHacker knows that Jasmine can be [pause] ~moody~ sometimes. She LOVES throwing errors! 
+Every IronHacker knows that Jasmine can be <i>~moody~</i> sometimes. She LOVES throwing errors! 
 
 In this game you can Defeat Jasmine just by grabbing some green check signs and taking breaks to increase your time. 
 
-But be aware! Jasmine is not going to let you win this battle so easily. She will throw you some erros ❌ along the way, there will be bugs 🐝 🦟 🐛 and a lot of breaks 🕑 to take on your path.
+But be aware! Jasmine is not going to let you win this battle so easily. She will throw you a bunch of erros ❌, there will be bugs do decrease your game time along the way 🐝 🦟 🐛 and a lot of breaks 🕑 to take on your path.
 
 
 ## MVP (DOM - CANVAS)

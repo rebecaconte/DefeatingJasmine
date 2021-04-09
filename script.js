@@ -25,11 +25,12 @@ fallingObjects.setup();
 
 // GAME OVER
 let isGameOver = false;
-let intervalId = undefined;
+let intervalId = 0;
 let interval = 90;
+let intervalFinal = 0;
 
 // GAME TIMER 2 Minutes
-let timer = undefined;
+let timer = 0;
 let remainingTime = 120;
 
 // music
@@ -40,9 +41,11 @@ let unmuteButton = new Image();
 unmuteButton.src = "./images/musicButton.png"
 
 const gameAudio = new Audio("sounds/audioGame.mp3");
-//gameAudio.volume = 0.3;
+gameAudio.volume = 0.1;
+gameAudio.loop = true;
 
-// music buttons position and size
+
+// music buttons -- position and size
 let musicOn = true;
 let muteButtonX = 740;
 let muteButtonY = 20;
@@ -88,7 +91,7 @@ function draw() {
             fallingObjects.reset(fallingObjects.randomObjects[i]);
           } else if(fallingObjects.randomObjects[i].type == "error") {
             isGameOver = true;
-            console.log ("insidecollision");
+            /*console.log ("insidecollision");*/
             fallingObjects.reset(fallingObjects.randomObjects[i]);
           } else if(fallingObjects.randomObjects[i].type == "takebreak") {
             remainingTime += 10;
@@ -136,7 +139,7 @@ function startGame(){
   gameAudio.play();
 
 
-  this.intervalId = setInterval(() => {
+  intervalFinal = setInterval(() => {
     if(!isGameOver) {
     intervalId = requestAnimationFrame(draw)
     } else {
@@ -144,19 +147,18 @@ function startGame(){
     }
   }, interval); 
 
-  this.timer = setInterval(() => {
+  timer = setInterval(() => {
     remainingTime--;
 
     if(remainingTime == 0) {
       isGameOver = true;
-      console.log ("insideTimer");  
       }
   }, 1000);
 }
 
 function winGame() {
   cancelAnimationFrame(intervalId);
-  clearInterval(intervalId);
+  clearInterval(intervalFinal);
   clearInterval(timer);
   gameAudio.pause();
   canvasMenu.classList.add('hidden');
@@ -168,7 +170,7 @@ function winGame() {
 // Game Over Game and Clean Resources
 function gameOver() {
     cancelAnimationFrame(intervalId);
-    clearInterval(intervalId);
+    clearInterval(intervalFinal);
     clearInterval(timer);
     gameAudio.pause();
     canvasMenu.classList.add('hidden');

@@ -80,12 +80,12 @@ class FallingObjects {
     // RANDOMLY CHOSING FALLING ITEMS
     randomIndex(fallingObjectsArray){
         const random = Math.floor(Math.random() * fallingObjectsArray.length);
-        return random
+        return random;
     }
     // GENERATING NEW ITEMS
     setup () {
         for(let i = 0; i < this.maxItems; i++) {
-            this.generateNewFallingItem()
+            this.generateNewFallingItem();
         }
     }
 
@@ -103,6 +103,6 @@ class FallingObjects {
         newRandomImage.speed = Math.floor(Math.random() * (this.maxSteps - this.minSteps)) + this.minSteps;
         newRandomImage.type = randomImage.type;
 
-        this.randomObjects.push(newRandomImage)
+        this.randomObjects.push(newRandomImage);
     }
 }
