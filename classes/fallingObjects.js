@@ -1,7 +1,9 @@
 // ---- ALL FALLING IMAGES -----
 class FallingObjects {
     constructor() {
-        this.maxItems = 10;
+        // number of items 
+        this.maxItems = 12;
+        // pace of the fall in px
         this.maxSteps = 15;
         this.minSteps = 5;
 
@@ -54,7 +56,7 @@ class FallingObjects {
         this.takeBreak.imageY = 0;
         this.takeBreak.type = "takebreak";
 
-        this.objects = [this.jasmineError, this.jasmineCheck, this.takeBreak, this.bug1, this.bug2, this.bug3, this.bug4]
+        this.objects = [this.jasmineError, this.jasmineCheck, this.takeBreak, this.jasmineCheck, this.jasmineError, this.bug1, this.bug2, this.bug3, this.bug4]
         this.randomObjects = [];
     }
 

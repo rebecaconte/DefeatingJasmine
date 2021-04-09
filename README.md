@@ -16,10 +16,12 @@ But be aware! Jasmine is not going to let you win this battle so easily. She wil
 
 ## MVP (DOM - CANVAS)
 
-- game has 'errors' and bugs falling off the top of the canvas 
-- check sign of the left needs to be dragged from the left and dropped at the right side of the screen
-- grabbing bugs along the way increase strenght
-- when touch red X 3 times, end the game OR decrease strenght
+- splash (start button)
+- game has 'errors' and several bugs falling off the top of the canvas 
+- check sign needs to be catched to increase score
+- 'Take a Break' signs increases game time
+- hitting bugs along the way decrease game time
+- when player hits red X imediate end the game
 
 
 
@@ -36,16 +38,17 @@ But be aware! Jasmine is not going to let you win this battle so easily. She wil
 - 
 
 EXTRA:
-- add lives
+- add timer
 - add music
 
 ## DATA STRUCTURE
 
-MAIN JS:
 
-buildSplashScreen () {}
-buildGameScreen () {}
-buildGameOverScreen () {}
+index.html;
+style.css;
+script.js;
+fallingObjects.js;
+player.js;
 
 
 ## STATES Y STATES TRANSITIONS
@@ -70,14 +73,12 @@ game - drawCanvas
 game - addEventListener
 game - startLoop
 
-greencheck - draw
-greenCheck - grab and drag method
-errors && bugs - falling method
-error - 
-bug - 
+player and items - draw
+fallingObjects - collision method
+errors & bugs - Loop method
 
 game - checkCollision
-game - GameOver
+game - GameOver conditions
 game - addEventListener
 
 ## ADDITIONAL LINKS

@@ -34,12 +34,13 @@ let remainingTime = 120;
 
 // music
 let muteButton = new Image();
-muteButton.src = "./images/muteMusic2.png" 
+muteButton.src = "./images/muteMusic.png" 
 
 let unmuteButton = new Image();
-unmuteButton.src = "./images/musicButton2.png"
+unmuteButton.src = "./images/musicButton.png"
 
 const gameAudio = new Audio("sounds/audioGame.mp3");
+//gameAudio.volume = 0.3;
 
 // music buttons position and size
 let musicOn = true;
@@ -80,9 +81,10 @@ function draw() {
             fallingObjects.reset(fallingObjects.randomObjects[i]);
           } else if(fallingObjects.randomObjects[i].type == "checkmark") {
             player.score += 10;
-            if(player.score == 100) {
-              winGame();
+            /* if(player.score == 100) {
+              winGame(); 
             }
+            */
             fallingObjects.reset(fallingObjects.randomObjects[i]);
           } else if(fallingObjects.randomObjects[i].type == "error") {
             isGameOver = true;
@@ -180,15 +182,18 @@ window.addEventListener('load', () => {
   canvas.classList.add('hidden');
   canvasGameOver.classList.add('hidden');
   canvasMenu.classList.remove('hidden');
-    //audio.pause()
+  
 })
 
-// START GAME
+
+/* ---- BUTTONS ----- */
+
+// start button
 startButton.addEventListener('click', () => {
   startGame();
 });
 
-// RESTART GAME 
+// restart button
 restartButton.addEventListener('click', () => {
   isGameOver = false;
   remainingTime = 120;
@@ -198,7 +203,7 @@ restartButton.addEventListener('click', () => {
 
 
 
-// ---- MUSIC ------ 
+// mute and unmute buttons
 
 function getMousePos(canvas, event) {
   let rect = canvas.getBoundingClientRect();

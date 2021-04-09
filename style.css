@@ -1,3 +1,5 @@
+/* STANDART SETTINGS */
+
 body {
     font-size: 14px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -7,6 +9,8 @@ body {
     text-shadow: white 0px 0px 2px;
     margin: 0;
 }
+
+/* BACKGROUNG IMG */
 
 .bg-container {
 
@@ -18,20 +22,25 @@ body {
    
 }
 
+/* 'Defeating Jasmine' HEADERS */
+
 .header-start {
     margin-top: 0;
-    font-size: 30px;
+    font-size: 40px;
     margin-left:200px;
-    padding-top: 30px;
+    padding-top: 32px;
+    color: purple;
 }
 
 .header-gameover {
     margin-top: 0;
-    font-size: 30px;
-    margin-left:px;
+    font-size: 35px;
     padding-top: 20px;
     padding-left: 30%;
+    color: purple;
 }
+
+/* CONTENT TEXT SPLASH & GAME OVER SCREENS */
 
 .text {
     font-size: 20px;
@@ -43,7 +52,7 @@ body {
 }  
 
 
-/* start and restart */
+/* START & RESTART BUTTONS */
 
 .buttons{
     cursor: pointer;
@@ -55,6 +64,9 @@ body {
     height: 75px;
 }
 
+
+/* GAME OVER SCREEN */
+
 .game-over {
     width: 40%;
     display:flex;
@@ -63,7 +75,6 @@ body {
     padding-left: 30%;
     padding-top: 5%;
     
-
 }
 
 /* HIDDEN FEATURE */
